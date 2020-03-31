@@ -44,7 +44,7 @@ for i in all_contents_list:
         s = re.search(r'[0-9]+月[0-9]+日', text2)
         now_date = s.group(0)
     if "(1)年代" in text2:
-        text_age = text2[5:-1]
+        text_age = re.findall("[0-9]+", text2)[-1]
         new_date_data = data_shaping(now_date)
         date.append(new_date_data)
         age.append(text_age)
