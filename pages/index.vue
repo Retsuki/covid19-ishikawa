@@ -13,6 +13,15 @@
       </div>
     </div>
     <whats-new class="mb-4" :items="newsItems" />
+    <static-info
+      class="mb-4"
+      :url="localePath('/about')"
+      :text="
+        $t(
+          '当サイトは有志が作成したものです。お問い合わせは石川県ではなく、当サイト運営まで。'
+        )
+      "
+    />
     <!-- <static-info
       class="mb-4"
       :url="localePath('/flow')"
@@ -41,7 +50,7 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
-// import StaticInfo from '@/components/StaticInfo.vue'
+import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
 import News from '@/data/news.json'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
@@ -63,7 +72,7 @@ export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
-    // StaticInfo,
+    StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard
     // ConfirmedCasesDetailsCard,
