@@ -67,8 +67,8 @@ patients_df.to_csv('./tool/downloads/patients_data/patients.csv', index=False)
 # 日付データの作成
 today = datetime.datetime.now()
 this_year = today.year
-this_month = today.month
-this_day = today.day
+this_month = 3
+this_day = 31
 this_hour = today.hour
 this_minute = today.minute
 today_info = datetime.datetime(this_year, this_month, 1)
@@ -95,9 +95,9 @@ csv_files = glob.glob('./tool/downloads/each_data/*.csv')
 each_csv = []
 for i in csv_files:
     each_csv.append(pd.read_csv(i))
-df = pd.concat(each_csv).reset_index(drop=True)
+df = pd.concat(each_csv).reset_index(drop=True).sort_values('日付')
 
-patients_summary_df = df
+patients_summary_df = df.reset_index(drop=True)
 df.to_csv("./tool/downloads/final_data/total.csv", index=False)
 
 # patientsデータの作成
