@@ -37,16 +37,16 @@ sex = []
 table = str.maketrans('（１）', '(1)')
 all_contents = ""
 now_date = ""
+now_age = ""
+new_text = ""
+new_text_list = []
+infect_count = 0
 for i in all_contents_list:
     text = i.get_text().translate(table)
     text2 = text.replace("\xa0", "").replace("\r\n", "").replace(" ", "").replace("\u3000", "").replace("\n", "")
-    if re.search(r'令和[0-9]年+[0-9]+月[0-9]+日', text2):
-        s = re.search(r'[0-9]+月[0-9]+日', text2)
-        now_date = s.group(0)
+   
     if "(1)年代" in text2:
         text_age = re.findall("[0-9]+", text2)[-1]
-        new_date_data = data_shaping(now_date)
-        date.append(new_date_data)
         age.append(text_age)
     elif "(2)性別" in text2:
         text_sex = text2[5:]
@@ -54,8 +54,47 @@ for i in all_contents_list:
     elif "(3)居住地" in text2:
         text_residence = text2[6:]
         residence.append(text_residence)
+        
+    if "症状・経過" in text2:
+        
+        # 新たなlistの要素を作る
+        new_text_list.append("empty")
+        
+        # 初期設定
+        if now_age == "":
+            now_age = text2 + "check"
+            new_text += text2
+            infect_count += 1
+            continue
+            
+        # now_ageとtext2の内容が違うのであれば
+        # (1)Save ever data
+        # (2)Delete ever data
+        # (3)Add new data
+        if now_age != text2:
+            new_text_list[infect_count-1] = new_text # (1)
+            new_text = "" # (2)
+            new_text += text2 # (3)
+            infect_count += 1
+            continue
+    
+    if 0 < infect_count:
+        if "(5)行動歴" in text2:
+            continue
+        new_text += text2
+        
+
+new_text_list[infect_count-1] = new_text
+
+for i in new_text_list:
+    target_index = i.find("陽性と判明")
+    result = i[:target_index]
+    s = re.findall(r'[0-9]+月[0-9]+日', result)
+    new_data = data_shaping(s[-1])
+    date.append(new_data)
 
 c = collections.Counter(date)
+
 df['date'] = date
 df['居住地'] = residence
 df['年代'] = age
@@ -67,8 +106,8 @@ patients_df.to_csv('./tool/downloads/patients_data/patients.csv', index=False)
 # 日付データの作成
 today = datetime.datetime.now()
 this_year = today.year
-this_month = 3
-this_day = 31
+this_month = today.month
+this_day = today.day
 this_hour = today.hour
 this_minute = today.minute
 today_info = datetime.datetime(this_year, this_month, 1)
@@ -95,9 +134,9 @@ csv_files = glob.glob('./tool/downloads/each_data/*.csv')
 each_csv = []
 for i in csv_files:
     each_csv.append(pd.read_csv(i))
-df = pd.concat(each_csv).reset_index(drop=True).sort_values('日付')
+df = pd.concat(each_csv).reset_index(drop=True)
 
-patients_summary_df = df.reset_index(drop=True)
+patients_summary_df = df.sort_values("日付").reset_index(drop=True)
 df.to_csv("./tool/downloads/final_data/total.csv", index=False)
 
 # patientsデータの作成
