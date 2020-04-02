@@ -137,7 +137,7 @@ for i in csv_files:
 df = pd.concat(each_csv).reset_index(drop=True)
 
 patients_summary_df = df.sort_values("日付").reset_index(drop=True)
-df.to_csv("./tool/downloads/final_data/total.csv", index=False)
+patients_summary_df.to_csv("./tool/downloads/final_data/total.csv", index=False)
 
 # patientsデータの作成
 patients_df_dict = patients_df.to_dict('index')
