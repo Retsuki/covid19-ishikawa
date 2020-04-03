@@ -2,7 +2,7 @@
 
 ![](https://ishikawacorona.s3-ap-northeast-1.amazonaws.com/readmeishikawa.png)
 
-[石川県 新型コロナウイルス感染症対策サイト](https://www.pref.ishikawa.lg.jp/kansen/coronakennai.html)
+[石川県 新型コロナウイルス感染症対策サイト](https://ishikawa-covid19.netlify.com/)
 
 ## 行動原則
 詳しくは[サイト構築にあたっての行動原則](./CODE_OF_CONDUCT.md)を御覧ください。
