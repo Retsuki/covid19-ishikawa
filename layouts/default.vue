@@ -140,11 +140,11 @@ export default Vue.extend({
             '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報サイトです。'
           )
         },
-        // {
-        //   hid: 'og:image',
-        //   property: 'og:image',
-        //   content: this.$tc('ogp.og:image')
-        // },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.$tc('ogp.og:image')
+        },
         {
           hid: 'apple-mobile-web-app-title',
           name: 'apple-mobile-web-app-title',
