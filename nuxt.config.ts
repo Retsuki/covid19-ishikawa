@@ -55,6 +55,11 @@ const config: Configuration = {
         content: '@tokyo_bousai'
       },
       {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://ishikawa-covid19.netlify.com/ogp.png'
+      },
+      {
         hid: 'fb:app_id',
         property: 'fb:app_id',
         content: '2879625188795443'
