@@ -1,5 +1,6 @@
 import os
 import re
+import csv
 import glob
 import json
 import requests
@@ -147,6 +148,25 @@ data1 = [ patients_df_dict.get(i) for i in range(len(patients_df_dict)) ]
 patients_summary_df_dict = patients_summary_df.to_dict('index')
 data2 = [ patients_summary_df_dict.get(i) for i in range(len(patients_summary_df)) ]
 
+# 感染者と治療中の人数と退院数データの作成
+table = soup.findAll("table")[0]
+tr = table.findAll("tr")
+with open('./tool/downloads/table_data/corona_table.csv', "w", encoding="utf-8") as file:
+    writer = csv.writer(file)
+    for i in tr:
+        row = []
+        for cell in i.findAll(["td", "th"]):
+            row.append(cell.get_text())
+        writer.writerow(row)
+
+table_df = pd.read_csv('./tool/downloads/table_data/corona_table.csv')
+table_df.head()
+
+final_row = table_df[-1:]
+total_infect = int(final_row["感染者"])
+treat = int(final_row["治療中"])
+dischange = int(final_row["退院"])
+
 update_at = "{}/{}/{} {}:{}".format(this_year, this_month, this_day, this_hour, this_minute)
 data_json = {
     "lastUpdate": update_at,
@@ -157,6 +177,26 @@ data_json = {
     "patients_summary": {
         "date": update_at,
         "data": data2
+    },
+    "main_summary": {
+        "attr": "検査実施人数",
+        "value": 0,
+        "children": [
+            {
+                "attr": "感染者者数",
+                "value": total_infect,
+                "children": [
+                    {
+                        "attr": "入院中",
+                        "value": treat
+                    },
+                    {
+                        "attr": "退院",
+                        "value": dischange
+                    }
+                ]
+            }
+        ]
     }
 }
 
