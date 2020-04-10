@@ -3,6 +3,7 @@ import re
 import csv
 import glob
 import json
+import jaconv
 import requests
 import datetime
 import calendar
@@ -44,16 +45,19 @@ new_text_list = []
 infect_count = 0
 for i in all_contents_list:
     text = i.get_text().translate(table)
-    text2 = text.replace("\xa0", "").replace("\r\n", "").replace(" ", "").replace("\u3000", "").replace("\n", "")
+    text2 = jaconv.z2h(text, kana=False, digit=True, ascii=True).replace(" ", "").replace(":", "").replace("\xa0", "")
    
     if "(1)年代" in text2:
-        text_age = re.findall("[0-9]+", text2)[-1]
+        m = re.search(r"\(1\)?年代(.+)", text2)
+        text_age = m.groups()[0]
         age.append(text_age)
     elif "(2)性別" in text2:
-        text_sex = text2[5:]
+        m = re.search(r"\(2\)性別(.+)", text2)
+        text_sex = (m.groups()[0])
         sex.append(text_sex)
     elif "(3)居住地" in text2:
-        text_residence = text2[6:]
+        m = re.search(r"\(3\)居住地(.+)", text2)
+        text_residence = (m.groups()[0])
         residence.append(text_residence)
         
     if "症状・経過" in text2:
