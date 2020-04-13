@@ -47,17 +47,12 @@ const config: Configuration = {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@tokyo_bousai'
+        content: '@Ishikawa_Covid'
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@tokyo_bousai'
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://ishikawa-covid19.netlify.com/ogp.png'
+        content: '@Ishikawa_Covid'
       },
       {
         hid: 'fb:app_id',
