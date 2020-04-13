@@ -24,22 +24,6 @@ const config: Configuration = {
         content: 'https://ishikawa-covid19.netlify.com/'
       },
       {
-        hid: 'og:title',
-        property: 'og:title',
-        content: '石川県 新型コロナウイルス感染症対策サイト'
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content:
-          '当サイトは石川県新型コロナウイルス感染症（COVID-19）に関する最新情報サイトです。'
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://ishikawa-covid19.netlify.com/ogp.png'
-      },
-      {
         hid: 'twitter:card',
         name: 'twitter:card',
         content: 'summary_large_image'
