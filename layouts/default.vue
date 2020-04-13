@@ -155,10 +155,15 @@ export default Vue.extend({
             ' ' +
             this.$t('対策サイト')
         },
+        // {
+        //   hid: 'twitter:image',
+        //   name: 'twitter:image',
+        //   content: 'https://ishikawa-covid19.netlify.com/ogp.png'
+        // }
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: 'https://ishikawa-covid19.netlify.com/ogp.png'
+          content: 'https://stopcovid19.metro.tokyo.lg.jp/ogp.png'
         }
       ]
     }
