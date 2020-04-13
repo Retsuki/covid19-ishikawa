@@ -182,8 +182,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content:
-            'https://ishikawacorona.s3-ap-northeast-1.amazonaws.com/readmeishikawa.png'
+          content: ogpImage
         },
         {
           hid: 'twitter:image',
