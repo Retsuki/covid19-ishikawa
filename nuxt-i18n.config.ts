@@ -34,20 +34,20 @@ export default {
       file: 'zh_CN.json',
       description: 'Simplified Chinese'
     },
-    {
-      code: 'zh-tw',
-      name: '繁體中文',
-      iso: 'zh-TW',
-      file: 'zh_TW.json',
-      description: 'Traditional Chinese'
-    },
-    {
-      code: 'ko',
-      name: '한국어',
-      iso: 'ko-KR',
-      file: 'ko.json',
-      description: 'Korean'
-    },
+    // {
+    //   code: 'zh-tw',
+    //   name: '繁體中文',
+    //   iso: 'zh-TW',
+    //   file: 'zh_TW.json',
+    //   description: 'Traditional Chinese'
+    // },
+    // {
+    //   code: 'ko',
+    //   name: '한국어',
+    //   iso: 'ko-KR',
+    //   file: 'ko.json',
+    //   description: 'Korean'
+    // },
     // #1126, #872 (comment)
     // ポルトガル語は訳が揃っていないため非表示
     // {

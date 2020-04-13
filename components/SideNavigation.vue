@@ -13,7 +13,7 @@
           <img
             class="SideNavigation-HeaderLogo"
             src="/logo.svg"
-            :alt="$t('東京都')"
+            :alt="$t('石川県')"
           />
           <div class="SideNavigation-HeaderText">
             {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
@@ -34,15 +34,17 @@
       </v-icon>
 
       <nav class="SideNavigation-Menu">
-        <MenuList :items="items" @click="$emit('closeNavi', $event)" />
-        <div
-          v-if="this.$i18n.locales.length > 1"
-          class="SideNavigation-Language"
-        >
-          <!-- <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
-            {{ $t('多言語対応選択メニュー') }}
-          </label>
-          <LanguageSelector /> -->
+        <div class="SideNavigation-Language">
+          <div
+            v-if="this.$i18n.locales.length > 1"
+            class="SideNavigation-Language"
+          >
+            <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
+              {{ $t('多言語対応選択メニュー') }}
+            </label>
+            <LanguageSelector />
+          </div>
+          <MenuList :items="items" @click="$emit('closeNavi', $event)" />
         </div>
       </nav>
 
@@ -93,7 +95,7 @@
             </picture>
           </a>
         </div>
-        <!-- <small class="SideNavigation-Copyright">
+        <small class="SideNavigation-Copyright">
           {{ $t('このサイトの内容物は') }}
           <a
             :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
@@ -105,8 +107,8 @@
           </a>
           {{ $t('の下に提供されています。') }}
           <br />
-          2020 Tokyo Metropolitan Government
-        </small> -->
+          2020 Retsuki Yoneichi Toyo university student
+        </small>
       </footer>
     </div>
   </div>
@@ -115,7 +117,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
-// import LanguageSelector from '@/components/LanguageSelector.vue'
+import LanguageSelector from '@/components/LanguageSelector.vue'
 import MenuList from '@/components/MenuList.vue'
 
 type Item = {
@@ -127,7 +129,7 @@ type Item = {
 
 export default Vue.extend({
   components: {
-    // LanguageSelector,
+    LanguageSelector,
     MenuList
   },
   props: {
@@ -144,16 +146,6 @@ export default Vue.extend({
           title: this.$t('石川県内の最新感染動向'),
           link: this.localePath('/')
         },
-        // {
-        //   icon: 'CovidIcon',
-        //   title: this.$t('新型コロナウイルス感染症が心配なときに'),
-        //   link: this.localePath('/flow')
-        // },
-        // {
-        //   icon: 'ParentIcon',
-        //   title: this.$t('お子様をお持ちの皆様へ'),
-        //   link: this.localePath('/parent')
-        // },
         {
           icon: 'mdi-account-multiple',
           title: this.$t('県民の皆様へ'),
@@ -164,32 +156,14 @@ export default Vue.extend({
           title: this.$t('経営に影響を受けている事業者の皆様へ'),
           link: 'https://www.pref.ishikawa.lg.jp/kinyuu/kinyuu/korona.html'
         },
-        // {
-        //   title: this.$t('東京都新型コロナウイルス感染症対策本部報'),
-        //   link:
-        //     'https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/index.html'
-        // },
         {
           title: this.$t('石川県主催等 中止又は延期するイベント等'),
           link: 'https://www.pref.ishikawa.lg.jp/kenmin/kouhou/eventcancel.html'
         },
-        // {
-        //   title: this.$t('知事からのメッセージ'),
-        //   link:
-        //     'https://www.metro.tokyo.lg.jp/tosei/governor/governor/katsudo/2020/03/03_00.html'
-        // },
         {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
         }
-        // {
-        //   title: this.$t('お問い合わせ先一覧'),
-        //   link: this.localePath('/contacts')
-        // },
-        // {
-        //   title: this.$t('石川県公式ホームページ'),
-        //   link: 'https://www.pref.ishikawa.lg.jp/index.html'
-        // }
       ]
     }
   },
@@ -355,7 +329,8 @@ export default Vue.extend({
 }
 
 .SideNavigation-Language {
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .SideNavigation-LanguageLabel {
