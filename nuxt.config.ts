@@ -21,7 +21,7 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://ishikawa-covid19.netlify.com/'
+        content: 'https://covid19-ishikawa.netlify.com/'
       },
       {
         hid: 'twitter:card',
