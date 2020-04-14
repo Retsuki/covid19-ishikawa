@@ -177,7 +177,8 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: ogpImage
+          content:
+            'https://raw.githubusercontent.com/Retsuki/covid19-ishikawa/development/static/ogp.png'
         },
         {
           hid: 'twitter:image',
