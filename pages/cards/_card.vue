@@ -139,7 +139,7 @@ export default {
     return data
   },
   head() {
-    const url = 'https://ishikawa-covid19.netlify.com/'
+    const url = 'https://covid19-ishikawa.netlify.com/'
     const ogpImage = this.$tc('ogp.og:image')
     const description = `${this.updatedAt} | ${this.$t(
       '当サイトは石川県新型コロナウイルス感染症 (COVID-19) に関する最新情報サイトです。'
@@ -177,8 +177,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content:
-            'https://raw.githubusercontent.com/Retsuki/covid19-ishikawa/development/static/ogp.png'
+          content: ogpImage
         },
         {
           hid: 'twitter:image',
