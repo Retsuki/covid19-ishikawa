@@ -4,17 +4,23 @@
       {{ $t('当サイトについて') }}
     </page-header>
     <StaticCard>
-      {{
-        $t(
-          '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、東京都が開設したものです。'
-        )
-      }}<br />
-      <br />
-      {{
-        $t(
-          '東京都による公式情報と客観的な数値をわかりやすく伝えることで、東京都にお住まいの方や、東京都内に拠点を持つ企業の方、東京都を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。'
-        )
-      }}
+      <h3>{{ $t('当サイト運営') }}</h3>
+      <i18n
+        tag="p"
+        path="本サイトは{duz_mk}が東京都のサイトを基に開発されました。"
+      >
+        <a
+          href="https://twitter.com/duz_mk"
+          target="_blank"
+          rel="noopener"
+          place="duz_mk"
+        >
+          {{ $t('@duz_mk') }}
+        </a>
+      </i18n>
+      <p>
+        {{ $t('お問い合わせは「retu1118@gmail.com」') }}
+      </p>
     </StaticCard>
     <StaticCard>
       <h3>{{ $t('ブラウザ環境について') }}</h3>
@@ -174,15 +180,15 @@
       <h3>{{ $t('データについて') }}</h3>
       <i18n
         tag="p"
-        path="本サイトで公表しているデータは、{catalogWebsite}より誰でも自由にダウンロードが可能です。（データは順次追加予定です）"
+        path="本サイトで公表しているデータは、{catalogWebsite}からテキストデータをスクレイピングしてきたものになります。"
       >
         <a
-          href="https://portal.data.metro.tokyo.lg.jp/"
+          href="https://www.pref.ishikawa.lg.jp/kansen/coronakennai.html"
           target="_blank"
           rel="noopener"
           place="catalogWebsite"
         >
-          {{ $t('東京都オープンデータカタログサイト') }}
+          {{ $t('石川県新型コロナ患者発生状況サイト') }}
         </a>
       </i18n>
     </StaticCard>
@@ -196,7 +202,7 @@
         }}
         <i18n path="詳しくは、{githubRepo}をご確認ください。">
           <a
-            href="https://github.com/tokyo-metropolitan-gov/covid19"
+            href="https://github.com/Retsuki/covid19-ishikawa"
             target="_blank"
             rel="noopener"
             place="githubRepo"

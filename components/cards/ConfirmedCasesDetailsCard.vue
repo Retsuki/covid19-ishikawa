@@ -1,12 +1,12 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <confirmed-cases-card
-      :title="$t('検査陽性者の状況')"
+      :title="$t('感染者の状況')"
       :title-id="'details-of-confirmed-cases'"
       :date="Data.patients.date"
     >
       <confirmed-cases-table
-        :aria-label="$t('検査陽性者の状況')"
+        :aria-label="$t('感染者の状況')"
         v-bind="confirmedCases"
       />
     </confirmed-cases-card>
@@ -25,7 +25,7 @@ export default {
     ConfirmedCasesTable
   },
   data() {
-    // 検査陽性者の状況
+    // 感染者者の状況
     const confirmedCases = formatConfirmedCases(Data.main_summary)
 
     const data = {

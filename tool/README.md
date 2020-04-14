@@ -1,12 +1,9 @@
 # Need
 
-- php 7.x
-- composer
+- requirements.txtに必要なパッケージが揃っている
 
 # Usage
 
-- download source xlsx files to `downloads` dir
-- composer install
-- php convert.php
-- will be update data.json to {project_dir}/data/data.json
+- scrapingしたものをdowloads以下に出力（3つのファイル）
+- 最後にdata.jsonに書き出し。
 
