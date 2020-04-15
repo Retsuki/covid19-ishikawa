@@ -1,0 +1,44 @@
+name: update data
+
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - name: Cache pip
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          ${{ runner.os }}-
+    - name: Install dependencies
+        run: pip install -r requirements.txt
+    - name: Run auto update script
+      env:
+        NAME: Retsuki
+        EMAIL: retu1118@gmail.com
+        PASSWORD: ${{ secrets.PASSWORD }}
+      run: |
+        TODAY=`date "+%Y/%m/%d %H:%M"`
+        git config user.name ${NAME}
+        git config user.email ${EMAIL}
+        git remote set-url origin https://${NAME}:${PASSWORD}@github.com/${NAME}/covid19-ishikawa
+        git checkout development
+        python tool/scraping.py
+        git add .
+        git commit -m "データ更新 ${TODAY}"
+        git push origin development
+  
