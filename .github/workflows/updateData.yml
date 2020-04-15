@@ -30,6 +30,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run auto update script
       env:
+        TZ: Asia/Tokyo
         NAME: Retsuki
         EMAIL: retu1118@gmail.com
         PASSWORD: ${{ secrets.PASSWORD }}
