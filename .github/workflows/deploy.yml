@@ -1,6 +1,8 @@
 name: production deploy
 
 on:
+  repository_dispatch:
+    types: [build_application]
   push:
     branches:
       - master
