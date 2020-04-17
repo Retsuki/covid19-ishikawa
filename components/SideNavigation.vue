@@ -12,7 +12,7 @@
         <nuxt-link :to="localePath('/')" class="SideNavigation-HeaderLink">
           <img
             class="SideNavigation-HeaderLogo"
-            src="/logo.svg"
+            src="/logo.png"
             :alt="$t('石川県')"
           />
           <div class="SideNavigation-HeaderText">
@@ -285,13 +285,14 @@ export default Vue.extend({
 }
 
 .SideNavigation-HeaderLogo {
-  @include lessThan($tiny) {
+  @include lessThan($small) {
     width: 100px;
+    height: 50px;
   }
 }
 
 .SideNavigation-HeaderText {
-  margin: 10px 0 0 0;
+  margin: 30px 0 0 0;
   @include lessThan($small) {
     margin: 0 0 0 10px;
   }
@@ -329,7 +330,6 @@ export default Vue.extend({
 }
 
 .SideNavigation-Language {
-  padding-top: 10px;
   padding-bottom: 10px;
 }
 
