@@ -259,7 +259,7 @@ export default Vue.extend({
         ' / ' +
         this.$t('石川県') +
         this.$t('新型コロナウイルス感染症') +
-        this.$t('対策サイト(非公式)') +
+        this.$t('対策サイト(公認)') +
         '&url=' +
         this.permalink(true) +
         '&' +
