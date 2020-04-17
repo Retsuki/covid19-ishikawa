@@ -51,7 +51,7 @@
             </li>
           </ul> -->
         </li>
-        <!-- <li :class="[$style.box, $style.deceased]">
+        <li :class="[$style.box, $style.deceased]">
           <div :class="$style.pillar">
             <div :class="$style.content">
               <span>{{ $t('死亡') }}</span>
@@ -61,7 +61,7 @@
               </span>
             </div>
           </div>
-        </li> -->
+        </li>
         <li :class="[$style.box, $style.recovered]">
           <div :class="$style.pillar">
             <div :class="$style.content">
@@ -104,10 +104,10 @@ export default Vue.extend({
     //   type: Number,
     //   required: true
     // },
-    // 死亡: {
-    //   type: Number,
-    //   required: true
-    // },
+    死亡: {
+      type: Number,
+      required: true
+    },
     退院: {
       type: Number,
       required: true
@@ -217,20 +217,20 @@ $default-boxdiff: 35px;
     > .pillar {
       // [6列] 1/6
       // width: calc((100% + #{$default-bdw} * 2) / 6 - #{$default-bdw} * 3);
-      width: calc((100% + #{$default-bdw} * 2) / 3 - #{$default-bdw} * 3);
+      width: calc((100% + #{$default-bdw} * 2) / 4 - #{$default-bdw} * 3);
     }
 
     > .group {
       // [6列] 5/6
       // width: calc((100% + #{$default-bdw} * 2) / 6 * 5 + #{$default-bdw});
-      width: calc((100% + #{$default-bdw} * 2) / 3 * 2 + #{$default-bdw});
+      width: calc((100% + #{$default-bdw} * 2) / 4 * 3 + #{$default-bdw});
     }
   }
 
   &.hospitalized {
     margin-left: $default-bdw;
     // [5列] 3/5
-    width: calc(100% / 2 * 1 - #{$default-bdw});
+    width: calc(100% / 3 * 1 - #{$default-bdw});
 
     // > .pillar {
     //   // [3列] 1/3
@@ -255,7 +255,7 @@ $default-boxdiff: 35px;
     margin-left: $default-bdw;
     // [5列] 1/5
     // width: calc(100% / 5 - #{$default-bdw});
-    width: calc(100% / 2 - #{$default-bdw});
+    width: calc(100% / 3 - #{$default-bdw});
   }
 }
 
@@ -343,7 +343,7 @@ $default-boxdiff: 35px;
         //   (100% + #{px2vw($bdw, $vw)} * 2) / 6 - #{px2vw($bdw, $vw)} * 3
         // );
         width: calc(
-          (100% + #{px2vw($bdw, $vw)} * 2) / 3 - #{px2vw($bdw, $vw)} * 3
+          (100% + #{px2vw($bdw, $vw)} * 2) / 4 - #{px2vw($bdw, $vw)} * 3
         );
       }
 
@@ -352,7 +352,7 @@ $default-boxdiff: 35px;
         //   (100% + #{px2vw($bdw, $vw)} * 2) / 6 * 5 + #{px2vw($bdw, $vw)}
         // );
         width: calc(
-          (100% + #{px2vw($bdw, $vw)} * 2) / 3 * 2 + #{px2vw($bdw, $vw)}
+          (100% + #{px2vw($bdw, $vw)} * 2) / 4 * 3 + #{px2vw($bdw, $vw)}
         );
       }
     }
@@ -360,7 +360,7 @@ $default-boxdiff: 35px;
     &.hospitalized {
       margin-left: px2vw($bdw, $vw);
       // width: calc(100% / 5 * 3 - #{px2vw($bdw, $vw)});
-      width: calc(100% / 2 * 1 - #{px2vw($bdw, $vw)});
+      width: calc(100% / 3 * 1 - #{px2vw($bdw, $vw)});
 
       // > .pillar {
       //   width: calc(
@@ -385,7 +385,7 @@ $default-boxdiff: 35px;
     &.recovered {
       margin-left: px2vw($bdw, $vw);
       // width: calc(100% / 5 - #{px2vw($bdw, $vw)});
-      width: calc(100% / 2 - #{px2vw($bdw, $vw)});
+      width: calc(100% / 3 - #{px2vw($bdw, $vw)});
     }
   }
 }
