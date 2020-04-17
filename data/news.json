@@ -1,6 +1,10 @@
-  
 {
     "newsItems": [
+        {
+            "date": "4\/13\/2020",
+            "url": "https://www.pref.ishikawa.lg.jp/library_documents/kjs200413.pdf",
+            "text": "石川県緊急事態宣言について"
+        },
         {
             "date": "4\/17\/2020",
             "text": "当サイトは毎時30分に更新されるようになりました。"
