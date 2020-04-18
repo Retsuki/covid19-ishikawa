@@ -1,8 +1,8 @@
 # 石川県 新型コロナウイルス感染症対策サイト（公認）
 
-![](https://covid19-ishikawa.netlify.com/ogp.png)
+![](https://covid19-ishikawa.com/ogp.png)
 
-[石川県 新型コロナウイルス感染症対策サイト](https://covid19-ishikawa.netlify.com/)
+[石川県 新型コロナウイルス感染症対策サイト](https://covid19-ishikawa.com/)
 
 ## 行動原則
 詳しくは[サイト構築にあたっての行動原則](./CODE_OF_CONDUCT.md)を御覧ください。
