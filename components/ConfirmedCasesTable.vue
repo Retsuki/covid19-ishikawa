@@ -230,6 +230,7 @@ $default-boxdiff: 35px;
   &.hospitalized {
     margin-left: $default-bdw;
     // [5列] 3/5
+    // 内側のカードの幅（3枚なら３当分）
     width: calc(100% / 3 * 1 - #{$default-bdw});
 
     // > .pillar {

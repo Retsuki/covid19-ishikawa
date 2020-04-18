@@ -119,10 +119,10 @@ export default {
     return data
   },
   head() {
-    const url = 'https://covid19-ishikawa.netlify.com/'
+    const url = 'https://covid19-ishikawa.com/'
     const ogpImage = this.$tc('ogp.og:image')
     const description = `${this.updatedAt} | ${this.$t(
-      '当サイトは石川県新型コロナウイルス感染症 (COVID-19) に関する最新情報サイトです。'
+      '当サイトは、石川県内の新型コロナウイルス感染症（COVID-19）に関する最新情報を提供するために作成されました。開発は、石川県出身の大学生が行っています。'
     )}`
 
     return {

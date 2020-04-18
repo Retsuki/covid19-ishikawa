@@ -87,7 +87,7 @@ export default Vue.extend({
       link: [
         {
           rel: 'canonical',
-          href: `https://covid19-ishikawa.netlify.com${this.$route.path}`
+          href: `https://covid19-ishikawa.com${this.$route.path}`
         }
       ],
       meta: [
@@ -99,9 +99,20 @@ export default Vue.extend({
         {
           hid: 'description',
           name: 'description',
-          content: this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報をサイトです。'
-          )
+          content:
+            this.$t(
+              '当サイトは、石川県内の新型コロナウイルス感染症（COVID-19）に関する最新情報を提供するために作成されました。開発は、石川県出身の大学生が行っています。'
+            ) +
+            '' +
+            this.$t(
+              '複製・改変が許されたオープンソースライセンスで公開されている、{tokyoCovid19Site}の{tokyoCovid19SiteGitHub}を利用しています。',
+              {
+                tokyoCovid19:
+                  this.$t('東京都公式新型コロナウイルス対策サイト') +
+                  ' ( https://stopcovid19.metro.tokyo.lg.jp/ )',
+                tokyoCovid19SiteGitHub: this.$t('仕組み')
+              }
+            )
         },
         {
           hid: 'og:site_name',
@@ -116,7 +127,7 @@ export default Vue.extend({
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://covid19-ishikawa.netlify.com${this.$route.path}`
+          content: `https://covid19-ishikawa.com${this.$route.path}`
         },
         {
           hid: 'og:locale',
@@ -136,9 +147,20 @@ export default Vue.extend({
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報サイトです。'
-          )
+          content:
+            this.$t(
+              '当サイトは、石川県内の新型コロナウイルス感染症（COVID-19）に関する最新情報を提供するために作成されました。開発は、石川県出身の大学生が行っています。'
+            ) +
+            '' +
+            this.$t(
+              '複製・改変が許されたオープンソースライセンスで公開されている、{tokyoCovid19Site}の{tokyoCovid19SiteGitHub}を利用しています。',
+              {
+                tokyoCovid19:
+                  this.$t('東京都公式新型コロナウイルス対策サイト') +
+                  ' ( https://stopcovid19.metro.tokyo.lg.jp/ )',
+                tokyoCovid19SiteGitHub: this.$t('仕組み')
+              }
+            )
         },
         {
           hid: 'og:image',
