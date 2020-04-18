@@ -1,13 +1,34 @@
 {
     "newsItems": [
         {
-            "date": "4\/13\/2020",
-            "url": "https://www.pref.ishikawa.lg.jp/library_documents/kjs200413.pdf",
-            "text": "石川県緊急事態宣言について"
+            "date": "2020/04/18 01:30",
+            "url": "https://www.asahi.com/articles/ASN4K7D2MN4JPISC02Z.html",
+            "text": "石川）感染者の6割超が金沢市在住、県内の傾向分析 - 朝日新聞社"
         },
         {
-            "date": "4\/17\/2020",
-            "text": "当サイトは毎時30分に更新されるようになりました。"
+            "date": "2020/04/17 11:00",
+            "url": "https://www.nikkei.com/article/DGXMZO58202140X10C20A4LB0000/",
+            "text": "石川県、休業要請の協力金支給へ 北陸にも緊急宣言 - 日本経済新聞"
+        },
+        {
+            "date": "2020/04/17 08:31",
+            "url": "https://www.fnn.jp/articles/-/33561",
+            "text": "感染者“急増”止まらず…新型コロナ 石川県で新たに金沢市等の『14人』陽性 県内計160人に - FNNプライムオンライン"
+        },
+        {
+            "date": "2020/04/16 21:45",
+            "url": "https://mainichi.jp/articles/20200417/k00/00m/040/023000c",
+            "text": "新型コロナ「外部の専門家から直接助言受けず」と石川知事 部下があわてて火消し - 毎日新聞 - 毎日新聞"
+        },
+        {
+            "date": "2020/04/16 07:39",
+            "url": "https://www.nikkei.com/article/DGXMZO58130410W0A410C2LB0000/",
+            "text": "石川県、軽症・無症状者はホテル療養に 新型コロナ - 日本経済新聞"
+        },
+        {
+            "date": "2020/04/13 01:20",
+            "url": "https://www.chunichi.co.jp/hokuriku/article/news/CK2020041302100016.html",
+            "text": "石川県内感染 100人超え 新型コロナ 新たに12人確認 - 中日新聞"
         }
     ]
 }
