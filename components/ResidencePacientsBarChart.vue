@@ -191,8 +191,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 display: false
               },
               ticks: {
-                fontSize: 8,
-                maxTicksLimit: 30,
+                fontSize: 9,
+                maxTicksLimit: 20,
                 fontColor: '#808080',
                 maxRotation: 45,
                 minRotation: 0
@@ -223,7 +223,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return options
     },
     scaledTicksYAxisMax() {
-      const yAxisMax = 1.2
+      const yAxisMax = 1.1
       const dataKind = 'pacients'
       const values = this.chartData.map(d => d[dataKind])
       return Math.max(...values) * yAxisMax
