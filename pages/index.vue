@@ -30,9 +30,10 @@
     /> -->
     <v-row class="DataBlock">
       <confirmed-cases-details-card />
-      <!-- <tested-cases-details-card /> -->
+      <residence-pacients-card />
       <confirmed-cases-attributes-card />
       <confirmed-cases-number-card />
+      <!-- <tested-cases-details-card /> -->
       <!-- <inspection-persons-number-card /> -->
       <!-- <tested-number-card /> -->
       <!-- <telephone-advisory-reports-number-card /> -->
@@ -55,9 +56,11 @@ import Data from '@/data/data.json'
 import News from '@/data/news.json'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
-// import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+import ResidencePacientsCard from '@/components/cards/ResidencePacientsCard.vue'
+
+// import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 // import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 // import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
@@ -75,7 +78,9 @@ export default Vue.extend({
     StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
-    ConfirmedCasesDetailsCard
+    ConfirmedCasesDetailsCard,
+    ResidencePacientsCard
+
     // TestedCasesDetailsCard,
     // TestedNumberCard,
     // InspectionPersonsNumberCard,
