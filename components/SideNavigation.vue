@@ -62,7 +62,7 @@
             </picture>
           </a> -->
           <a
-            href="https://twitter.com/Ishikawa_Covid"
+            href="https://twitter.com/duz_mk"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"

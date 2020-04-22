@@ -24,7 +24,7 @@ export default {
     ResidencePacientsBarChart
   },
   data() {
-    // 感染者数グラフ
+    // 感染者数グラフ(現在までの累積数を取るため)
     const patientsGraph = formatGraph(Data.patients_summary.data)
 
     // 居住地別感染者グラフ
@@ -32,6 +32,7 @@ export default {
       Data.residence_pacients.data
     )
 
+    // グラフの右上の項目, 累積数と最新データ更新日を記載
     const sumInfoOfPatients = {
       lText: patientsGraph[
         patientsGraph.length - 1

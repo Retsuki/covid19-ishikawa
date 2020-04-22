@@ -93,7 +93,7 @@ type Props = {
   unit: string
   url: string
 }
-
+// 以下はchart jsのオプション（グラフのフォントサイズなどを変えたりする）
 const options: ThisTypedComponentOptionsWithRecordProps<
   Vue,
   Data,
